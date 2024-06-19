@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		327E43AF2C23433E003F0E39 /* HorizontalTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E43AE2C23433E003F0E39 /* HorizontalTimelineView.swift */; };
-		327E43B12C234399003F0E39 /* ScrollViewOffSetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E43B02C234399003F0E39 /* ScrollViewOffSetReader.swift */; };
+		327E43B52C23592C003F0E39 /* ScrollUI in Frameworks */ = {isa = PBXBuildFile; productRef = 327E43B42C23592C003F0E39 /* ScrollUI */; };
 		32A45AA12C2342CA003AA4CE /* CustomTimelinePickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A45AA02C2342CA003AA4CE /* CustomTimelinePickerApp.swift */; };
 		32A45AA32C2342CA003AA4CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A45AA22C2342CA003AA4CE /* ContentView.swift */; };
 		32A45AA52C2342CC003AA4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32A45AA42C2342CC003AA4CE /* Assets.xcassets */; };
@@ -17,7 +17,6 @@
 
 /* Begin PBXFileReference section */
 		327E43AE2C23433E003F0E39 /* HorizontalTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalTimelineView.swift; sourceTree = "<group>"; };
-		327E43B02C234399003F0E39 /* ScrollViewOffSetReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffSetReader.swift; sourceTree = "<group>"; };
 		32A45A9D2C2342CA003AA4CE /* CustomTimelinePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTimelinePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A45AA02C2342CA003AA4CE /* CustomTimelinePickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimelinePickerApp.swift; sourceTree = "<group>"; };
 		32A45AA22C2342CA003AA4CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327E43B52C23592C003F0E39 /* ScrollUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				327E43AE2C23433E003F0E39 /* HorizontalTimelineView.swift */,
-				327E43B02C234399003F0E39 /* ScrollViewOffSetReader.swift */,
 			);
 			path = HorizontalTimeline;
 			sourceTree = "<group>";
@@ -99,6 +98,9 @@
 			dependencies = (
 			);
 			name = CustomTimelinePicker;
+			packageProductDependencies = (
+				327E43B42C23592C003F0E39 /* ScrollUI */,
+			);
 			productName = CustomTimelinePicker;
 			productReference = 32A45A9D2C2342CA003AA4CE /* CustomTimelinePicker.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +129,9 @@
 				Base,
 			);
 			mainGroup = 32A45A942C2342CA003AA4CE;
+			packageReferences = (
+				327E43B32C23592C003F0E39 /* XCRemoteSwiftPackageReference "ScrollViewStyle" */,
+			);
 			productRefGroup = 32A45A9E2C2342CA003AA4CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -156,7 +161,6 @@
 				32A45AA32C2342CA003AA4CE /* ContentView.swift in Sources */,
 				32A45AA12C2342CA003AA4CE /* CustomTimelinePickerApp.swift in Sources */,
 				327E43AF2C23433E003F0E39 /* HorizontalTimelineView.swift in Sources */,
-				327E43B12C234399003F0E39 /* ScrollViewOffSetReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +219,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -270,6 +275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -286,6 +292,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CustomTimelinePicker/Preview Content\"";
+				DEVELOPMENT_TEAM = 5Y786T4RLZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -298,7 +305,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -322,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CustomTimelinePicker/Preview Content\"";
+				DEVELOPMENT_TEAM = 5Y786T4RLZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -334,7 +342,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -371,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		327E43B32C23592C003F0E39 /* XCRemoteSwiftPackageReference "ScrollViewStyle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RelativeJoe/ScrollViewStyle.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		327E43B42C23592C003F0E39 /* ScrollUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 327E43B32C23592C003F0E39 /* XCRemoteSwiftPackageReference "ScrollViewStyle" */;
+			productName = ScrollUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 32A45A952C2342CA003AA4CE /* Project object */;
 }

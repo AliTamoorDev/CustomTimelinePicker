@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AudioToolbox
+import ScrollUI
 
 struct HorizontalTimelineView: View {
     let rangeStart: Int = 1
@@ -22,7 +23,8 @@ struct HorizontalTimelineView: View {
     @State private var cursorValue: String = "1:00"
     @State private var scrollToIndex: Double?
     @State private var isSnappingEnabled: Bool = true
-    
+    @ScrollState var state
+
     init() {
         UIScrollView.appearance().bounces = false
     }
@@ -33,11 +35,6 @@ struct HorizontalTimelineView: View {
                 ScrollViewReader { scrollViewProxy in
                     ScrollView(.horizontal, showsIndicators: false) {
                         ZStack {
-                            ScrollViewOffsetReader(onScrollingStarted: {
-                                
-                            }, onScrollingFinished: {
-                                if isSnappingEnabled { snapToNearestLine() }
-                            })
                             HStack(spacing: 0) {
                                 ForEach(rangeStart...rangeEnd, id: \.self) { hour in
                                     HStack(alignment: .top, spacing: self.lineSpacing) {
@@ -70,6 +67,13 @@ struct HorizontalTimelineView: View {
                             )
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .offset(x: (geometry.size.width) / 2, y: 0)
+                        }
+                    }
+                    .scrollViewStyle(.defaultStyle($state))
+                    .onChange(of: state.isDragging) { newValue in
+                        if !newValue {
+                            print(newValue)
+                            snapToNearestLine()
                         }
                     }
                     .gesture(

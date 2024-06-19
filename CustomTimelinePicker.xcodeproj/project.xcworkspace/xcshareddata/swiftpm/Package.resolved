@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "scrollviewstyle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RelativeJoe/ScrollViewStyle.git",
+      "state" : {
+        "revision" : "acbc98767d2d9d02c2ed7fe35636566277670188",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUI-Introspect",
+      "state" : {
+        "revision" : "121c146fe591b1320238d054ae35c81ffa45f45a",
+        "version" : "0.12.0"
+      }
+    }
+  ],
+  "version" : 2
+}
