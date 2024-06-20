@@ -72,8 +72,12 @@ struct HorizontalTimelineView: View {
                     .scrollViewStyle(.defaultStyle($state))
                     .onChange(of: state.isDragging) { newValue in
                         if !newValue {
-                            print(newValue)
                             snapToNearestLine()
+                            if let index = scrollToIndex {
+                                withAnimation {
+                                    scrollViewProxy.scrollTo(index, anchor: .top)
+                                }
+                            }
                         }
                     }
                     .gesture(
@@ -82,13 +86,6 @@ struct HorizontalTimelineView: View {
                                 isSnappingEnabled = true
                             }
                     )
-                    .onChange(of: scrollToIndex) { index in
-                        if let index = index {
-                            withAnimation {
-                                scrollViewProxy.scrollTo(index, anchor: .top)
-                            }
-                        }
-                    }
                     .overlay(
                         // Marker above the timeline
                         VStack(spacing: 0) {
@@ -126,12 +123,12 @@ struct HorizontalTimelineView: View {
     }
     
     func snapToNearestLine() {
+        debugPrint("ScrollToIndex Current Value: \(scrollToIndex)")
         let val = (((-self.scrollOffset) / 4) / blockWidth) + 1
-        let finally = roundToNearestTenth(val)
-        print(finally)
-        scrollToIndex = finally
+        let updatedSTI = roundToNearestTenth(val)
+        debugPrint("ScrollToIndex Updated Value: \(updatedSTI)")
+        scrollToIndex = updatedSTI
         isSnappingEnabled = false
-        
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
         AudioServicesPlayAlertSound(1157)
     }
@@ -141,7 +138,9 @@ struct HorizontalTimelineView: View {
         let decimalPart = value - integerPart
         
         switch decimalPart {
-        case 0.0..<0.375:
+        case 0.0..<0.125:
+            return integerPart + 0.0
+        case 0.125..<0.375:
             return integerPart + 0.1
         case 0.375..<0.625:
             return integerPart + 0.2
